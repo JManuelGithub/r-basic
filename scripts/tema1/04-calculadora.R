@@ -71,6 +71,7 @@ factorial(4)
 
 factorial(0)
 
+#Combinatorios
 choose(5, 3)
 
 choose(3,5)
@@ -98,12 +99,12 @@ asin(0.8660254) * 180 /pi #arc sin en grados
 asin(5) #arc sin x in [-1,1]
 
 acos(-8)
-
-print(sqrt(2),10)
-round(sqrt(2), 3)
-floor(sqrt(2))
-ceiling(sqrt(2))
-trunc(sqrt(2))
+sqrt(2)
+print(sqrt(2),10)#imprime las 10 cifras signifiactivas
+round(sqrt(2), 3)#Redondea con n cifras significativas
+floor(sqrt(2))#Parte entera por defecto de X
+ceiling(sqrt(2))#Parte entera por exceso de x
+trunc(sqrt(2))#PArte entera sin decimales
 
 sqrt(2)^2-2
 
@@ -113,8 +114,8 @@ round(sqrt(2), 4)^2
 print(2^50, 15)
 print(2^50, 2)
 print(pi, 22)
-#3.141592653589793115998
-#3.141592653589793238462
+#3.141592653589793115998 =pi de R
+#3.141592653589793238462=pi calculado
 
 round(1.25,1)
 round(1.35,1)
@@ -124,12 +125,12 @@ round(sqrt(2))
 round(digits = 5, sqrt(2))
 round(5, sqrt(2))
 
-
+#Diferencias de funciones de redondeo
 floor(-3.45)
 ceiling(-3.45)
 trunc(-3.45)
 
-
+#Creacion de variables
 x = (pi^2)/2
 x
 
@@ -190,13 +191,13 @@ suma5 <- function(numero){
 
 suma5(3)
 
+ls()#Lista de variables
+
+rm(product)#Remove la funcion product
+
 ls()
 
-rm(product)
-
-ls()
-
-rm(list = ls())
+rm(list = ls())#Remove de todos los elementos
 
 class(3+2i)
 
@@ -228,14 +229,14 @@ Mod(z1)
 #Argumento = arctan(Im(z)/Re(z))
 # = arccos(Re(z)/Mod(z))
 # = arcsin(Im(z)/Mod(z))
-# va de (-pi, pi]
+# va de [-pi, pi]
 Arg(-1+0i)
 Arg(-1-2i)
 #Conjugado = Re(z)- Im(z)i
 Conj(z1)
 #Parte Real y Parte Imaginaria
 Re(z1)
-Im(z1)
+Im(Conj(z1))
 
 ### z = Mod(z) * (cos(Arg(z))+sin(Arg(z))i)
 complex(modulus = 2, argument = pi/2) -> z2
