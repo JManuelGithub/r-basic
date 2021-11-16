@@ -61,6 +61,8 @@ log(32, 2)
 log(32, base = 2)
 log(base=2, 32)
 
+log10(1000)
+
 abs(-pi)
 
 factorial(7)
