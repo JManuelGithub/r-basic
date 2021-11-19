@@ -1,0 +1,135 @@
+---
+title: "Tarea4"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Pregunta 1
+
+
+Sean las matrices: 
+
+$$A= \begin{pmatrix}
+1&2&3&4\\4&3&2&1\\0&1&0&2\\3&0&4&0
+\end{pmatrix}$$
+
+$$B= \begin{pmatrix}
+4&3&2&1\\0&3&0&4\\1&2&3&4\\0&1&0&2
+\end{pmatrix}$$
+
+```{r,include=FALSE}
+A<-matrix(c(1,4,0,3,2,3,1,0,3,2,0,4,4,1,2,0),nrow = 4)
+B<-matrix(c(4,0,1,0,3,3,2,1,2,0,3,0,1,4,4,2),nrow = 4)
+
+```
+
+Los resultados de los productos son:
+$$A \cdot B= \begin{pmatrix}
+7&19&11&29\\18&26&14&26\\0&5&0&8\\16&17&18&19
+\end{pmatrix}$$
+```{r,include=FALSE}
+A.B=A%*%B
+```
+
+$$B \cdot A= \begin{pmatrix}
+19&19&22&23\\24&9&22&3\\21&11&23&12\\10&3&10&1
+\end{pmatrix}$$
+```{r,include=FALSE}
+B.A=B%*%A
+```
+
+$$ (A \cdot B)^t= \begin{pmatrix}
+7&18&0&16\\19&26&5&17\\11&14&0&18\\29&26&8&19
+\end{pmatrix}$$
+```{r,include=FALSE}
+trans_A.B<-t(A.B)
+trans_A.B
+```
+
+$$ B^t \cdot A= \begin{pmatrix}
+4&9&12&18\\18&17&19&19\\2&7&6&14\\23&18&19&16
+\end{pmatrix}$$
+```{r,include=FALSE}
+transB.A=t(B)%*%A
+transB.A
+```
+
+$$ (A \cdot B)^{-1}= \begin{pmatrix}
+-1.66&-0.65&4.52&1.52\\
+1.60&0.80&-4.60&-1.60\\
+1.02&0.35&-2.84&-0.84\\
+-1.00&-0.50&3.00&1.00
+\end{pmatrix}$$
+```{r,include=FALSE}
+inv_A.B=solve(A.B)
+inv_A.B
+```
+
+$$ A^{-1} \cdot B^{t}= \begin{pmatrix}
+0.6&2.4&6.4&1.2\\
+0.0&-2.0&-7.0&-1.2\\
+-0.2&-0.8&-3.8&-0.4\\
+1.0&1.0&5.0&0.6
+\end{pmatrix}$$
+```{r,include=FALSE}
+invA.transB=solve(A)%*%t(B)
+round(invA.transB,3)
+```
+# Pregunta 2
+
+Dado un vector $dni=(5,4,2,0,1,5,6,7)$
+
+Calcula:
+
+$$dni^2=(25,16,4,0,1,25,36,49)$$
+$$\sqrt {dni}=(2.24,2,1.41,0,1,2.24,2.45,2.65)$$
+$$\sum_1^{n=8} {dni}=30$$
+```{r,include=FALSE}
+dni=c(5,4,2,0,1,5,6,7)
+dni2=dni^2
+raiz_dni=round(sqrt(dni),2)
+round(raiz_dni,2)
+suma=sum(dni)
+
+
+
+```
+
+
+# Pregunta 3
+
+Sea el vector $name=("J", "O", "S", "E", "M", "A", "N", "U", "E", "L","F", "L","O", "R", "E", "S")$
+
+El subvector con mi nombre es: $fname=("J", "O", "S", "E", "M", "A", "N", "U", "E", "L")$
+
+El subvector con mi apellido es: $lname=("F", "L", "O", "R", "E" ,"S")$
+
+Ordenado el vector se obtiene $namesorted=("A", "E", "E", "E", "F", "J", "L", "L", "M", "N", "O", "O", "R", "S", "S", "U")$
+
+Y como matriz se obtiene:
+$$ matriz= \begin{pmatrix}
+"J"&"M"&"E"&"O"\\
+"O"&"A"&"L"&"R"\\
+"S"&"N"&"F"&"E"\\
+"E"&"U"&"L"&"S"
+\end{pmatrix}$$
+
+```{r,include=FALSE}
+name=c("J","O","S","E","M","A","N","U","E","L","F","L","O","R","E","S")
+fname=name[1:which(name=="L")[1]]
+lname=name[which(name=="F")[1]:length(name)]
+name_sorted=sort(name)
+matriz=matrix(name,nrow = 4)
+matriz
+```
+
+
+
+
+
+
+
